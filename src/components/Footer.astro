@@ -1,0 +1,38 @@
+---
+import { userData } from "../site-config";
+const today = new Date();
+---
+
+<footer
+    class="mt-24 w-full border-t border-gray-200 dark:border-gray-700 pt-10 pb-12 text-sm font-outfit text-center"
+>
+    <p class="text-gray-900 dark:text-white font-semibold text-base">
+        {userData.fullname}
+    </p>
+
+    <p class="mt-2 text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
+        {userData.footer.title}
+    </p>
+
+    <div
+        class="mt-4 flex flex-wrap justify-center gap-4 text-gray-700 dark:text-gray-300 text-sm sm:text-base"
+    >
+        {
+            userData.footer.links.map((link, index) => (
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link.href}
+                    class="hover:font-semibold hover:underline transition-all duration-100"
+                >
+                    {link.label}
+                </a>
+            ))
+        }
+    </div>
+
+    <p class="mt-6 text-gray-500 dark:text-gray-400 text-xs">
+        © {today.getFullYear()}
+        {userData.fullname}. All rights reserved.
+    </p>
+</footer>

@@ -1,0 +1,48 @@
+---
+import { userData } from "../site-config";
+---
+
+<header
+    class="font-outfit w-full flex justify-between items-start px-6 py-2 z-10"
+>
+    <!-- Location Info -->
+    <div
+        class="hidden md:flex flex-col gap-2 text-gray-700 dark:text-gray-300 text-sm"
+    >
+        <p class="flex flex-col gap-1 justify-center leading-tight">
+            <span>Based in</span>
+            <span>{userData.city}, {userData.country}</span>
+        </p>
+    </div>
+
+    <!-- Site Title / Logo -->
+    <a
+        href={`https://www.${userData.portfolio}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-center font-bold text-gray-600 dark:text-gray-200 hover:underline transition-all duration-300 text-sm sm:text-base"
+    >
+        {userData.portfolio}
+    </a>
+
+    <!-- Navigation -->
+    <nav
+        class="flex flex-row md:flex-col gap-4 md:gap-2 text-gray-700 dark:text-gray-300 text-sm"
+    >
+        <button id="theme-btn"> Change Theme </button>
+    </nav>
+</header>
+
+<script>
+    const btn = document.querySelector("#theme-btn");
+
+    btn?.addEventListener("click", () => {
+        const html = document.documentElement;
+
+        if (html.classList.contains("dark")) {
+            html.classList.remove("dark");
+        } else {
+            html.classList.add("dark");
+        }
+    });
+</script>
