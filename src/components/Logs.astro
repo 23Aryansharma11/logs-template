@@ -1,13 +1,14 @@
 ---
 import { logs } from "../logs";
-import { Image } from "astro:assets";
-import ArrowSvg from "../assets/arrow.svg";
+const sortedLogs = logs
+    .slice() 
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <section class="max-w-2xl mx-auto px-4 py-10 font-mono no-scrollbar">
     <div class="space-y-6">
         {
-            logs.map((log) => (
+            sortedLogs.map((log) => (
                 <details
                     class="group border border-gray-200 dark:border-gray-700 rounded-md p-4 transition-all duration-700 ease-in hover:shadow-sm"
                     id={`log-${log.date}`}
