@@ -11,6 +11,8 @@ Feel free to use it, fork it, or build on top of it.
 
 ## 🖼️ Preview
 
+Check out the [Logs Template](https://logs-template.vercel.app/) site.
+
 > Minimal. Clean. Developer-first.
 
 ![Dev Logs Preview 1](https://res.cloudinary.com/aryansharma/image/upload/f_auto,q_auto/v1/logs/swappy-20250709-225516_hfbprj)
